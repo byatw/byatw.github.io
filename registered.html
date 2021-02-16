@@ -944,17 +944,72 @@ window.addEventListener('load', addDarkmodeWidget);
 
 </script>
 
-<！版权信息：wufuyian.com | 不要艾特我>
-
 <script type="text/javascript">
 
 document.body.oncopy=function(){
     
-alert("复制成功！若要转载请保留原文链接，谢谢合作！");
+alert("复制成功！来源：wufuyian.com 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。");
 
 }
 
 </script>
+
+/**
+ * @description 添加版权
+ */
+ const addCopyright = () => {
+  const genCopy = () => {
+    return [
+      '',
+	  '',
+	  '作者：Vanessa',
+	  '链接：https://hacpai.com/article/1510544423932',
+	  '来源：黑客派',
+	  '著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。',
+	]
+  }
+
+  $('.content-reset').on('copy', function (event) {
+    if (!window.getSelection) {
+        return
+      }
+
+      var selectionObj = window.getSelection()
+      var author = $(this).data('author') || 'HacPai'
+      var link = $(this).data('link') || location.href
+
+      if (selectionObj.toString().length < 128) {
+        return
+      }
+
+      if (selectionObj.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = selectionObj.rangeCount; i < len; ++i) {
+          container.appendChild(selectionObj.getRangeAt(i).cloneContents());
+        }
+      }
+
+      if ('object' === typeof event.originalEvent.clipboardData) {
+        event.originalEvent.clipboardData.setData('text/html',  container.innerHTML + genCopy(author, link).join('<br>'))
+        container.remove();
+        event.originalEvent.clipboardData.setData('text/plain', selectionObj.toString() + genCopy(author, link).join('\n'))
+        event.preventDefault();
+        return
+      }
+
+      $('body').append('<div id="symFixCopy" style="position: fixed; left: -9999px;">' +
+        selectionObj.toString() + genCopy(author, link).join('<br>') + '</div>')
+      window.getSelection().selectAllChildren($('#symFixCopy')[0])
+      setTimeout(function () {
+        $('#symFixCopy').remove()
+      }, 200)
+  })
+}
+
+作者：Vanessa
+链接：https://ld246.com/article/1510544423932
+来源：链滴
+协议：CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
   
 </div></body>
 
