@@ -898,8 +898,14 @@ pre[class*="language-"].line-numbers > code {
         }
 
 
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <div id="answer">
 </style>
 
 <style> @media print{ code[class*="language-"],pre[class*="language-"]{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div id="markdown-body-wrap" class="markdown-body">
@@ -957,3 +963,38 @@ alert("复制成功！商业转载请联系作者获得授权，非商业转载�
 </div></body>
 
 </html>
+
+<b>test</b></div>
+    <script>
+        function setClipboardText(event){ 
+            event.preventDefault();
+            var node = document.createElement('div');
+            //documentfragment
+            node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+            var htmlData = '<div>著作权归作者所有。<br />' 
+                            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+                            + '作者：高乾<br />链接：wufuyian.com<br />'
+                            + '来源：不要艾特我<br /><br />' 
+                            + node.innerHTML 
+                            + '</div>';
+            var textData = '著作权归作者所有。\n' 
+                            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+                            + '作者：高乾\n链接：wufuyian.com\n'
+                            + '来源：不要艾特我\n\n' 
+                            + window.getSelection().getRangeAt(0);
+            if(event.clipboardData){  
+                event.clipboardData.setData("text/html", htmlData); 
+                event.clipboardData.setData("text/plain",textData);
+            }
+            else if(window.clipboardData){  
+                return window.clipboardData.setData("text", textData);  
+            }  
+        };  
+        var answer = document.getElementById("answer");
+        answer.addEventListener('copy',function(e){
+            setClipboardText(e);
+        });
+    </script>
+</body>
+</html>
+
