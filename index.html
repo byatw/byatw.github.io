@@ -901,64 +901,50 @@ pre[class*="language-"].line-numbers > code {
 
 </style>
 
-<style> @media print{ code[class*="language-"],pre[class*="language-"]{overflow: visible; word-wrap: break-word !important;} }</style><link rel="stylesheet" type="text/css" href="data:text/css;charset=UTF-8,%0A%20%20%20%20%20%20.darkmode-layer%20%7B%0A%20%20%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20%20%20pointer-events%3A%20none%3B%0A%20%20%20%20%20%20%20%20background%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20transition%3A%20all%200.3s%20ease%3B%0A%20%20%20%20%20%20%20%20mix-blend-mode%3A%20difference%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-layer--button%20%7B%0A%20%20%20%20%20%20%20%20width%3A%202.9rem%3B%0A%20%20%20%20%20%20%20%20height%3A%202.9rem%3B%0A%20%20%20%20%20%20%20%20border-radius%3A%2050%25%3B%0A%20%20%20%20%20%20%20%20right%3A%2032px%3B%0A%20%20%20%20%20%20%20%20bottom%3A%2032px%3B%0A%20%20%20%20%20%20%20%20left%3A%20unset%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-layer--simple%20%7B%0A%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20%20transform%3A%20scale(1)%20!important%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-layer--expanded%20%7B%0A%20%20%20%20%20%20%20%20transform%3A%20scale(100)%3B%0A%20%20%20%20%20%20%20%20border-radius%3A%200%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-layer--no-transition%20%7B%0A%20%20%20%20%20%20%20%20transition%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-toggle%20%7B%0A%20%20%20%20%20%20%20%20background%3A%20%23100f2c%3B%0A%20%20%20%20%20%20%20%20width%3A%203rem%3B%0A%20%20%20%20%20%20%20%20height%3A%203rem%3B%0A%20%20%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20%20%20border-radius%3A%2050%25%3B%0A%20%20%20%20%20%20%20%20border%3Anone%3B%0A%20%20%20%20%20%20%20%20right%3A%2032px%3B%0A%20%20%20%20%20%20%20%20bottom%3A%2032px%3B%0A%20%20%20%20%20%20%20%20left%3A%20unset%3B%0A%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-toggle--white%20%7B%0A%20%20%20%20%20%20%20%20background%3A%20%23fff%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-toggle--inactive%20%7B%0A%20%20%20%20%20%20%20%20display%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.darkmode-background%20%7B%0A%20%20%20%20%20%20%20%20background%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20%20%20pointer-events%3A%20none%3B%0A%20%20%20%20%20%20%20%20z-index%3A%20-10%3B%0A%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20img%2C%20.darkmode-ignore%20%7B%0A%20%20%20%20%20%20%20%20isolation%3A%20isolate%3B%0A%20%20%20%20%20%20%20%20display%3A%20inline-block%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%40media%20screen%20and%20(-ms-high-contrast%3A%20active)%2C%20(-ms-high-contrast%3A%20none)%20%7B%0A%20%20%20%20%20%20%20%20.darkmode-toggle%20%7Bdisplay%3A%20none%20!important%7D%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%40supports%20(-ms-ime-align%3Aauto)%2C%20(-ms-accelerator%3Atrue)%20%7B%0A%20%20%20%20%20%20%20%20.darkmode-toggle%20%7Bdisplay%3A%20none%20!important%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20"></head><body><div class="darkmode-background"></div><div class="darkmode-layer darkmode-layer--button"></div><button class="darkmode-toggle" aria-label="Activate dark mode" aria-checked="false" role="checkbox"></button><div id="markdown-body-wrap" class="markdown-body">
-<h3 id="toc_0">嗨！别来无恙啊~</h3>
+<style> @media print{ code[class*="language-"],pre[class*="language-"]{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div id="markdown-body-wrap" class="markdown-body">
+<h3 id="toc_0">Hi, 欢迎访问我的博客~</h3>
 
-<p><a href="https://wufuyian.com/about.html">关于</a></p>
+<small>本站域名：wufuyian.com（五福一安）</small>
 
-<img class="_3yRm_" src="http://wufuyian.github.io/avatar.png?auth_key=1614067793-aSP1XEhaeR5Evxz7tnx51f-0-b424f862d1cb9aa9ffb11ba36f55efc3&amp;image_process=resize,w_72">
+<h4 id="toc_1">怎么拍</h4>
 
-<h3 id="toc_1">ChrisGao</h3>
+<h4 id="toc_2">🥐 分享</h4>
 
-<h4 id="toc_2">🍯 分享</h4>
+<p>主要分享我日常使用的软件和硬件。<a href="wufuyian.com">【查看】</a></p>
 
-<p>在这里我会分享一些我日常使用的软件和硬件。
-</p><ul>
-  <li><a href="wufuyian.github.io/app.html">软件</a></li>
-  <li><a href="wufuyian.github.io/hardware.html">硬件</a></li>
-</ul>
-<p></p>
+<h4 id="toc_3">🍞 文章</h4>
 
-<h4 id="toc_3">🍞 设备</h4>
-<ol>
-<li>小米 6（亮黑色小杯） 购于 2018-01-16，目前做备用机。</li>
-<li>iPhone 11（白色中杯）购于 2019-09-20，目前做主力机。</li>
-<li>iPad Mini 5（深空灰色小杯）购于 2019-04-17，被外甥女抢走了。</li>
-<li>华硕 FH 5900 VQ 6700 （黑色小杯）购于 2017-03-18，目前吃灰中。</li>
-<li>小米手环 4 （石墨黑小杯）购于 2019-06-14，送给朋友了。</li>
-<li>小米手环 3 （石墨黑小杯）购于 xxxx-xx-xx，送给朋友了。 </li>
-<li>小米手环 2 （石墨黑小杯）购于 xxxx-xx-xx，闲鱼回血了。
-</li></ol>
-  
+<p>以干货教程类文章为主，其他文章可前往公众号阅读。<a href="wufuyian.com">【查看】</a></p>
 
-<h4 id="toc_4">🧀 文章</h4>
+<h4 id="toc_4">🧀 设备</h4>
 
-<p>这里只放教程和技术类文章，其他内容可移步<strong>公众号</strong>公众号或者<strong>知乎</strong>。<a href="wufuyian.github.io/note.html">More&gt;</a></p>
+<p>其实在成为果粉之前，我是一名忠实的米粉。<a href="wufuyian.com">【查看】</a></p>
 
-<h4 id="toc_5">🥐 小店</h4>
+<h4 id="toc_5">🍕 小店</h4>
 
-<p>目前商品种类和数量还不完善，后期会陆续增加。敬请期待！<a href="wufuyian.github.io/shop.jpg">More&gt;</a></p>
+<p>服务好，质量优。快来看看吧~<a href="wufuyian.com">【查看】</a></p>
 
 <h4 id="toc_6">🍪 赞赏</h4>
 
-<p>如果我的文章有帮助到你，欢迎赞赏支持~<a href="wufuyian.github.io/praise.jpg">More&gt;</a></p>
+<p>如果文章或分享对你有帮助，可以选择请我喝一杯奶茶呦~<a href="wufuyian.com">【查看】</a></p>
 
 <h4 id="toc_7">🍤 联系</h4>
 
 <p>邮箱: <a href="mailto:gaoqianchn@qq.com">gaoqianchn@qq.com</a><br>
-微信: ehpass    <strong>(备注来意)</strong>  🐹</p>
+微信: ehpass（望备注来意）</p>
 
 </div>
 
-<!--运行时间/-->
+<center>
 
-<center><span id="runtime_span">🍩本站稳定运行: 376天1小时1分47秒</span>
+<span id="runtime_span">🍩本站稳定运行: 378天2小时54分45秒</span>
 <script type="text/javascript">function show_runtime(){window.setTimeout("show_runtime()",1000);X=new 
 Date("02/14/2020 10:24:00");
 Y=new Date();T=(Y.getTime()-X.getTime());M=24*60*60*1000;
 a=T/M;A=Math.floor(a);b=(a-A)*24;B=Math.floor(b);c=(b-B)*60;C=Math.floor((b-B)*60);D=Math.floor((c-C)*60);
 runtime_span.innerHTML="🍩本站稳定运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();
-</script></center>
+</script>
 
+</center>
 
 </body></html>
